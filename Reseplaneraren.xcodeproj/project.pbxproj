@@ -14,9 +14,27 @@
 		04742551193F8B1A005A9214 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0474254F193F8B1A005A9214 /* Main.storyboard */; };
 		04742553193F8B1A005A9214 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04742552193F8B1A005A9214 /* Images.xcassets */; };
 		0474255F193F8B1A005A9214 /* ReseplanerarenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474255E193F8B1A005A9214 /* ReseplanerarenTests.swift */; };
+		0474256B193F8C0F005A9214 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474256A193F8C0F005A9214 /* Trip.swift */; };
+		0474256D193F8E41005A9214 /* TripLeg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474256C193F8E41005A9214 /* TripLeg.swift */; };
+		0474256F193F8E94005A9214 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474256E193F8E94005A9214 /* Line.swift */; };
+		04742571193F8E9D005A9214 /* TripLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04742570193F8E9D005A9214 /* TripLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		043286B31940E0DA00396A20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04742539193F8B1A005A9214 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04742540193F8B1A005A9214;
+			remoteInfo = Reseplaneraren;
+		};
+		043286B51940E0DD00396A20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04742539193F8B1A005A9214 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04742540193F8B1A005A9214;
+			remoteInfo = Reseplaneraren;
+		};
 		04742559193F8B1A005A9214 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 04742539193F8B1A005A9214 /* Project object */;
@@ -38,6 +56,10 @@
 		04742558193F8B1A005A9214 /* ReseplanerarenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReseplanerarenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0474255D193F8B1A005A9214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0474255E193F8B1A005A9214 /* ReseplanerarenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReseplanerarenTests.swift; sourceTree = "<group>"; };
+		0474256A193F8C0F005A9214 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		0474256C193F8E41005A9214 /* TripLeg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripLeg.swift; sourceTree = "<group>"; };
+		0474256E193F8E94005A9214 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		04742570193F8E9D005A9214 /* TripLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +101,7 @@
 		04742543193F8B1A005A9214 /* Reseplaneraren */ = {
 			isa = PBXGroup;
 			children = (
+				04742569193F8BB5005A9214 /* Models */,
 				04742546193F8B1A005A9214 /* AppDelegate.swift */,
 				0474254B193F8B1A005A9214 /* MasterViewController.swift */,
 				0474254D193F8B1A005A9214 /* DetailViewController.swift */,
@@ -115,6 +138,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		04742569193F8BB5005A9214 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0474256A193F8C0F005A9214 /* Trip.swift */,
+				0474256C193F8E41005A9214 /* TripLeg.swift */,
+				0474256E193F8E94005A9214 /* Line.swift */,
+				04742570193F8E9D005A9214 /* TripLocation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,6 +181,8 @@
 			);
 			dependencies = (
 				0474255A193F8B1A005A9214 /* PBXTargetDependency */,
+				043286B41940E0DA00396A20 /* PBXTargetDependency */,
+				043286B61940E0DD00396A20 /* PBXTargetDependency */,
 			);
 			name = ReseplanerarenTests;
 			productName = ReseplanerarenTests;
@@ -214,9 +250,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0474256B193F8C0F005A9214 /* Trip.swift in Sources */,
 				0474254A193F8B1A005A9214 /* Reseplaneraren.xcdatamodeld in Sources */,
 				04742547193F8B1A005A9214 /* AppDelegate.swift in Sources */,
+				0474256D193F8E41005A9214 /* TripLeg.swift in Sources */,
 				0474254C193F8B1A005A9214 /* MasterViewController.swift in Sources */,
+				04742571193F8E9D005A9214 /* TripLocation.swift in Sources */,
+				0474256F193F8E94005A9214 /* Line.swift in Sources */,
 				0474254E193F8B1A005A9214 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,6 +272,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		043286B41940E0DA00396A20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04742540193F8B1A005A9214 /* Reseplaneraren */;
+			targetProxy = 043286B31940E0DA00396A20 /* PBXContainerItemProxy */;
+		};
+		043286B61940E0DD00396A20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04742540193F8B1A005A9214 /* Reseplaneraren */;
+			targetProxy = 043286B51940E0DD00396A20 /* PBXContainerItemProxy */;
+		};
 		0474255A193F8B1A005A9214 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 04742540193F8B1A005A9214 /* Reseplaneraren */;
@@ -407,6 +457,7 @@
 				04742564193F8B1A005A9214 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04742565193F8B1A005A9214 /* Build configuration list for PBXNativeTarget "ReseplanerarenTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +466,7 @@
 				04742567193F8B1A005A9214 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
