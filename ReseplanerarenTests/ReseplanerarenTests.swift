@@ -49,9 +49,9 @@ class ReseplanerarenTests: XCTestCase {
         var trips: Trip[] = []
         
         var tripList: NSDictionary = tripJson["TripList"] as NSDictionary
-        var tripsAttributes: NSArray = tripList.objectForKey("Trip") as NSArray
+        var tripsAttributes: NSArray = tripList["Trip"] as NSArray
         
-        for tripAttributes : AnyObject in tripsAttributes {
+        for tripAttributes: AnyObject in tripsAttributes {
             trips.append(Trip(attributes: tripAttributes as NSDictionary))
         }
         

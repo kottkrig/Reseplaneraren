@@ -18,7 +18,7 @@ class TripLeg {
     init(attributes: NSDictionary) {
         self.line = Line(attributes: attributes)
         
-        self.destination = TripLocation(attributes: attributes.objectForKey("Destination") as NSDictionary);
-        self.origin = TripLocation(attributes: attributes.objectForKey("Origin") as NSDictionary);
+        self.destination = TripLocation(attributes: attributes["Destination"] as NSDictionary);
+        self.origin = TripLocation(attributes: attributes["Origin"] as NSDictionary);
     }
 }

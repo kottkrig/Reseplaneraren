@@ -21,32 +21,22 @@ class Line {
     let accessibility: String?;
     
     init(attributes: NSDictionary) {
+        
         // Västtrafik tycker av någon outgrundlig anledning att den röda färgen
         // i exempelvis femmans spårvagn är förgrundsfärg och vitt är bakgrundsfärgen.
         // Jag håller inte med, därför är dessa färger omvända från hur deras api ser ut.
         
-        /*if ([attributes objectForKey:@"bgColor"]) {
-            NSString *bgString = [[attributes objectForKey:@"bgColor"] stringByReplacingOccurrencesOfString:@"#" withString:@"0x"];
-            NSScanner *bgScanner = [NSScanner scannerWithString: bgString];
-            unsigned int bgColorInt;
-            [bgScanner scanHexInt: &bgColorInt];
-            
-            _foregroundColor = [UIColor colorWithHex:bgColorInt];
+        if let bgColorHexString = attributes["bgColor"] as? String {
+            foregroundColor = UIColor.colorWithHexString(bgColorHexString)
         }
         
-        if ([attributes objectForKey:@"fgColor"]) {
-            NSString *fgString = [[attributes objectForKey:@"fgColor"] stringByReplacingOccurrencesOfString:@"#" withString:@"0x"];
-            NSScanner *fgScanner = [NSScanner scannerWithString: fgString];
-            unsigned int fgColorInt;
-            [fgScanner scanHexInt: &fgColorInt];
-            
-            _backgroundColor = [UIColor colorWithHex:fgColorInt];
-        }*/
-        
-        
-        self.name = attributes.objectForKey("name") as String
+        if let fgColorHexString = attributes["fgColor"] as? String {
+            backgroundColor = UIColor.colorWithHexString(fgColorHexString)
+        }
+                
+        name = attributes.objectForKey("name") as String
         //self.labelName = self.name.stringByTrimmingCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet)
-        self.type = attributes.objectForKey("type") as String
-        self.direction = attributes.objectForKey("direction") as? String
+        type = attributes.objectForKey("type") as String
+        direction = attributes.objectForKey("direction") as? String
     }
 }

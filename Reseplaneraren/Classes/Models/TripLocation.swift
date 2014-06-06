@@ -18,9 +18,9 @@ class TripLocation: NSObject {
     
     init(attributes: NSDictionary) {
         
-        name = attributes.valueForKeyPath("name") as String
-        type = attributes.valueForKeyPath("type") as String
+        name = attributes["name"] as String
+        type = attributes["type"] as String
         
-        //_time = [DateUtils createNSDateFrom:[attributes valueForKeyPath:@"date"] timeString:[attributes valueForKeyPath:@"time"]];
+        time = DateUtils.createNSDateFromDateString(attributes["date"] as String, timeString: attributes["time"] as String)
     }
 }

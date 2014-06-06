@@ -10,7 +10,7 @@ import Foundation
 
 class Trip {
     
-    let legs: TripLeg[]
+    var legs: TripLeg[] = []
     let duration: NSDateComponents?
     
     let startTime: NSDate?
@@ -18,22 +18,19 @@ class Trip {
     
     init(attributes: NSDictionary) {
         
-        var tripLegs: TripLeg[] = []
-        
-        var legsAttributes : AnyObject = attributes.objectForKey("Leg") as AnyObject
+        var legsAttributes: AnyObject = attributes["Leg"] as AnyObject
         
         if legsAttributes.isKindOfClass(NSArray) {
             for legAttributes : AnyObject in legsAttributes as NSArray {
                 NSLog("%@", legAttributes as NSDictionary)
-                tripLegs.append(TripLeg(attributes: legAttributes as NSDictionary))
+                legs.append(TripLeg(attributes: legAttributes as NSDictionary))
             }
-        } else if (legsAttributes.isKindOfClass(NSDictionary)) {
-            tripLegs.append(TripLeg(attributes: legsAttributes as NSDictionary))
+        } else if legsAttributes.isKindOfClass(NSDictionary) {
+            var tripLeg = TripLeg(attributes: legsAttributes as NSDictionary)
+            legs.append(tripLeg)
         }
-        
-        self.legs = tripLegs
-        
-        //startTime = legs[0].origin.time
-        //endTime = legs[legs.endIndex].destination.time
+                
+        startTime = legs[0].origin.time
+        endTime = legs[legs.count - 1].destination.time
     }
 }

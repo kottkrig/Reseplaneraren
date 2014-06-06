@@ -7,17 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04742547193F8B1A005A9214 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04742546193F8B1A005A9214 /* AppDelegate.swift */; };
+		043286E419411A0A00396A20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043286D919411A0A00396A20 /* AppDelegate.swift */; };
+		043286E519411A0A00396A20 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043286DB19411A0A00396A20 /* Line.swift */; };
+		043286E619411A0A00396A20 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043286DC19411A0A00396A20 /* Trip.swift */; };
+		043286E719411A0A00396A20 /* TripLeg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043286DD19411A0A00396A20 /* TripLeg.swift */; };
+		043286E819411A0A00396A20 /* TripLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043286DE19411A0A00396A20 /* TripLocation.swift */; };
+		043286E919411A0A00396A20 /* VasttrafikAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043286E019411A0A00396A20 /* VasttrafikAPIManager.swift */; };
+		043286EA19411A0A00396A20 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043286E219411A0A00396A20 /* DetailViewController.swift */; };
+		043286EB19411A0A00396A20 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043286E319411A0A00396A20 /* MasterViewController.swift */; };
+		043286EE1941213900396A20 /* VasttrafikAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043286ED1941213900396A20 /* VasttrafikAPIClient.swift */; };
+		043286F01941CDC700396A20 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043286EF1941CDC700396A20 /* APIKey.swift */; };
+		043286F51941D91100396A20 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043286F41941D91100396A20 /* DateUtils.swift */; };
+		043286F71941E33200396A20 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043286F61941E33200396A20 /* UIColor+Hex.swift */; };
 		0474254A193F8B1A005A9214 /* Reseplaneraren.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04742548193F8B1A005A9214 /* Reseplaneraren.xcdatamodeld */; };
-		0474254C193F8B1A005A9214 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474254B193F8B1A005A9214 /* MasterViewController.swift */; };
-		0474254E193F8B1A005A9214 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474254D193F8B1A005A9214 /* DetailViewController.swift */; };
 		04742551193F8B1A005A9214 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0474254F193F8B1A005A9214 /* Main.storyboard */; };
 		04742553193F8B1A005A9214 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04742552193F8B1A005A9214 /* Images.xcassets */; };
 		0474255F193F8B1A005A9214 /* ReseplanerarenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474255E193F8B1A005A9214 /* ReseplanerarenTests.swift */; };
-		0474256B193F8C0F005A9214 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474256A193F8C0F005A9214 /* Trip.swift */; };
-		0474256D193F8E41005A9214 /* TripLeg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474256C193F8E41005A9214 /* TripLeg.swift */; };
-		0474256F193F8E94005A9214 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474256E193F8E94005A9214 /* Line.swift */; };
-		04742571193F8E9D005A9214 /* TripLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04742570193F8E9D005A9214 /* TripLocation.swift */; };
+		B1B7FEEE59D84739A3E3C7C4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59327E587A344338BCCE84C1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,21 +51,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		043286D919411A0A00396A20 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		043286DB19411A0A00396A20 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		043286DC19411A0A00396A20 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		043286DD19411A0A00396A20 /* TripLeg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripLeg.swift; sourceTree = "<group>"; };
+		043286DE19411A0A00396A20 /* TripLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripLocation.swift; sourceTree = "<group>"; };
+		043286E019411A0A00396A20 /* VasttrafikAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VasttrafikAPIManager.swift; sourceTree = "<group>"; };
+		043286E219411A0A00396A20 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		043286E319411A0A00396A20 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		043286ED1941213900396A20 /* VasttrafikAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VasttrafikAPIClient.swift; sourceTree = "<group>"; };
+		043286EF1941CDC700396A20 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		043286F41941D91100396A20 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		043286F61941E33200396A20 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		04742541193F8B1A005A9214 /* Reseplaneraren.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reseplaneraren.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04742545193F8B1A005A9214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04742546193F8B1A005A9214 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04742549193F8B1A005A9214 /* Reseplaneraren.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reseplaneraren.xcdatamodel; sourceTree = "<group>"; };
-		0474254B193F8B1A005A9214 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		0474254D193F8B1A005A9214 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		04742550193F8B1A005A9214 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04742552193F8B1A005A9214 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		04742558193F8B1A005A9214 /* ReseplanerarenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReseplanerarenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0474255D193F8B1A005A9214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0474255E193F8B1A005A9214 /* ReseplanerarenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReseplanerarenTests.swift; sourceTree = "<group>"; };
-		0474256A193F8C0F005A9214 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
-		0474256C193F8E41005A9214 /* TripLeg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripLeg.swift; sourceTree = "<group>"; };
-		0474256E193F8E94005A9214 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
-		04742570193F8E9D005A9214 /* TripLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripLocation.swift; sourceTree = "<group>"; };
+		0D7716F5F20840C1B6C90E1E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		59327E587A344338BCCE84C1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1B7FEEE59D84739A3E3C7C4 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,12 +94,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		043286D719411A0A00396A20 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				043286F31941D90100396A20 /* Helpers */,
+				043286D819411A0A00396A20 /* Application */,
+				043286DA19411A0A00396A20 /* Models */,
+				043286DF19411A0A00396A20 /* Networking */,
+				043286E119411A0A00396A20 /* ViewControllers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		043286D819411A0A00396A20 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				043286D919411A0A00396A20 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		043286DA19411A0A00396A20 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				043286DB19411A0A00396A20 /* Line.swift */,
+				043286DC19411A0A00396A20 /* Trip.swift */,
+				043286DD19411A0A00396A20 /* TripLeg.swift */,
+				043286DE19411A0A00396A20 /* TripLocation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		043286DF19411A0A00396A20 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				043286E019411A0A00396A20 /* VasttrafikAPIManager.swift */,
+				043286ED1941213900396A20 /* VasttrafikAPIClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		043286E119411A0A00396A20 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				043286E219411A0A00396A20 /* DetailViewController.swift */,
+				043286E319411A0A00396A20 /* MasterViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		043286F31941D90100396A20 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				043286F41941D91100396A20 /* DateUtils.swift */,
+				043286F61941E33200396A20 /* UIColor+Hex.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		04742538193F8B1A005A9214 = {
 			isa = PBXGroup;
 			children = (
 				04742543193F8B1A005A9214 /* Reseplaneraren */,
 				0474255B193F8B1A005A9214 /* ReseplanerarenTests */,
 				04742542193F8B1A005A9214 /* Products */,
+				0D7716F5F20840C1B6C90E1E /* Pods.xcconfig */,
+				C75EEB0A000B4158A43181D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +175,8 @@
 		04742543193F8B1A005A9214 /* Reseplaneraren */ = {
 			isa = PBXGroup;
 			children = (
-				04742569193F8BB5005A9214 /* Models */,
-				04742546193F8B1A005A9214 /* AppDelegate.swift */,
-				0474254B193F8B1A005A9214 /* MasterViewController.swift */,
-				0474254D193F8B1A005A9214 /* DetailViewController.swift */,
+				043286EF1941CDC700396A20 /* APIKey.swift */,
+				043286D719411A0A00396A20 /* Classes */,
 				0474254F193F8B1A005A9214 /* Main.storyboard */,
 				04742552193F8B1A005A9214 /* Images.xcassets */,
 				04742548193F8B1A005A9214 /* Reseplaneraren.xcdatamodeld */,
@@ -138,15 +210,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		04742569193F8BB5005A9214 /* Models */ = {
+		C75EEB0A000B4158A43181D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0474256A193F8C0F005A9214 /* Trip.swift */,
-				0474256C193F8E41005A9214 /* TripLeg.swift */,
-				0474256E193F8E94005A9214 /* Line.swift */,
-				04742570193F8E9D005A9214 /* TripLocation.swift */,
+				59327E587A344338BCCE84C1 /* libPods.a */,
 			);
-			path = Models;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,9 +225,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04742562193F8B1A005A9214 /* Build configuration list for PBXNativeTarget "Reseplaneraren" */;
 			buildPhases = (
+				8F3FF4C68C2C4E2ABDED383E /* Check Pods Manifest.lock */,
 				0474253D193F8B1A005A9214 /* Sources */,
 				0474253E193F8B1A005A9214 /* Frameworks */,
 				0474253F193F8B1A005A9214 /* Resources */,
+				B2026DAAA9AB409DBA381CA0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,19 +316,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8F3FF4C68C2C4E2ABDED383E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B2026DAAA9AB409DBA381CA0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0474253D193F8B1A005A9214 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0474256B193F8C0F005A9214 /* Trip.swift in Sources */,
+				043286E619411A0A00396A20 /* Trip.swift in Sources */,
+				043286F51941D91100396A20 /* DateUtils.swift in Sources */,
+				043286E519411A0A00396A20 /* Line.swift in Sources */,
+				043286E419411A0A00396A20 /* AppDelegate.swift in Sources */,
+				043286E719411A0A00396A20 /* TripLeg.swift in Sources */,
 				0474254A193F8B1A005A9214 /* Reseplaneraren.xcdatamodeld in Sources */,
-				04742547193F8B1A005A9214 /* AppDelegate.swift in Sources */,
-				0474256D193F8E41005A9214 /* TripLeg.swift in Sources */,
-				0474254C193F8B1A005A9214 /* MasterViewController.swift in Sources */,
-				04742571193F8E9D005A9214 /* TripLocation.swift in Sources */,
-				0474256F193F8E94005A9214 /* Line.swift in Sources */,
-				0474254E193F8B1A005A9214 /* DetailViewController.swift in Sources */,
+				043286EB19411A0A00396A20 /* MasterViewController.swift in Sources */,
+				043286F01941CDC700396A20 /* APIKey.swift in Sources */,
+				043286E819411A0A00396A20 /* TripLocation.swift in Sources */,
+				043286F71941E33200396A20 /* UIColor+Hex.swift in Sources */,
+				043286E919411A0A00396A20 /* VasttrafikAPIManager.swift in Sources */,
+				043286EE1941213900396A20 /* VasttrafikAPIClient.swift in Sources */,
+				043286EA19411A0A00396A20 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,23 +491,27 @@
 		};
 		04742563193F8B1A005A9214 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D7716F5F20840C1B6C90E1E /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Reseplaneraren/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
 		04742564193F8B1A005A9214 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D7716F5F20840C1B6C90E1E /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Reseplaneraren/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
