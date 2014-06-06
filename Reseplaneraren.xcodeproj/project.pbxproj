@@ -23,6 +23,7 @@
 		04742551193F8B1A005A9214 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0474254F193F8B1A005A9214 /* Main.storyboard */; };
 		04742553193F8B1A005A9214 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04742552193F8B1A005A9214 /* Images.xcassets */; };
 		0474255F193F8B1A005A9214 /* ReseplanerarenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474255E193F8B1A005A9214 /* ReseplanerarenTests.swift */; };
+		04822E371941EE39008C83DA /* TripQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04822E361941EE39008C83DA /* TripQuery.swift */; };
 		B1B7FEEE59D84739A3E3C7C4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59327E587A344338BCCE84C1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		04742558193F8B1A005A9214 /* ReseplanerarenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReseplanerarenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0474255D193F8B1A005A9214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0474255E193F8B1A005A9214 /* ReseplanerarenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReseplanerarenTests.swift; sourceTree = "<group>"; };
+		04822E361941EE39008C83DA /* TripQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripQuery.swift; sourceTree = "<group>"; };
 		0D7716F5F20840C1B6C90E1E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		59327E587A344338BCCE84C1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -121,6 +123,7 @@
 				043286DC19411A0A00396A20 /* Trip.swift */,
 				043286DD19411A0A00396A20 /* TripLeg.swift */,
 				043286DE19411A0A00396A20 /* TripLocation.swift */,
+				04822E361941EE39008C83DA /* TripQuery.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				043286E919411A0A00396A20 /* VasttrafikAPIManager.swift in Sources */,
 				043286EE1941213900396A20 /* VasttrafikAPIClient.swift in Sources */,
 				043286EA19411A0A00396A20 /* DetailViewController.swift in Sources */,
+				04822E371941EE39008C83DA /* TripQuery.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
