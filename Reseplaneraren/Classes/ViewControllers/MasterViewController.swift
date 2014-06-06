@@ -34,6 +34,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             let controllers = split.viewControllers
             self.detailViewController = controllers[controllers.endIndex-1].topViewController as? DetailViewController
         }
+        
+        var tripQuery = TripQuery()
+        tripQuery.setDestinationLocationId("9021014001980000")
+        tripQuery.setOriginLocationId("9021014002130000")
+        tripQuery.prefetchTripsIfPossible()
     }
 
     override func didReceiveMemoryWarning() {
