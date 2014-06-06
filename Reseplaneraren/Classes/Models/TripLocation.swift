@@ -20,7 +20,7 @@ class TripLocation: NSObject {
         
         name = attributes["name"] as String
         type = attributes["type"] as String
-        
+                
         time = DateUtils.createNSDateFromDateString(attributes["date"] as String, timeString: attributes["time"] as String)
     }
 }
