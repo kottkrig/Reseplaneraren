@@ -25,26 +25,57 @@ class VasttrafikAPIManager {
         }
     }
     
-    func fetchTripsWitchSearchParameters(searchParams: Dictionary<String, String>, success:() -> Trip[], failure:() -> NSError) {
+    func fetchTripsForQuery(tripQuery: TripQuery, success:(Trip[]) -> (), failure:(NSError) -> ()) {
+        fetchTripsWitchSearchParameters(tripQuery.queryParameters, success: success, failure: failure)
+    }
+    
+    func fetchTripsWitchSearchParameters(searchParams: Dictionary<String, String>, success:(Trip[]) -> (), failure:(NSError) -> ()) {
         
         var apiParams = Dictionary<String, String>()
         apiParams["format"] = "json"
         apiParams["authKey"] = VASTTRAFIK_API_KEY
         
-        //apiParams + searchParams
+        for (queryKey, queryValue) in searchParams {
+            apiParams[queryKey] = queryValue
+        }
         
-        var url: NSURL = NSURL.URLWithString("")
+        var url: NSURL = createUrlStringFromDictionary(baseUrl + "trip", parameters: apiParams)
         var request = NSURLRequest(URL: url)
+        
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession.sharedSession()
         
         let task: NSURLSessionTask = session.dataTaskWithRequest(request, completionHandler: {(data: NSData!, response: NSURLResponse!, error: NSError!) in
             
-            let json: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
-            NSLog("%@", json)
+            let tripJson: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+            
+            var trips: Trip[] = []
+            
+            var tripList: NSDictionary = tripJson["TripList"] as NSDictionary
+            var tripsAttributes: NSArray = tripList["Trip"] as NSArray
+            
+            for tripAttributes: AnyObject in tripsAttributes {
+                trips.append(Trip(attributes: tripAttributes as NSDictionary))
+            }
+            
+            success(trips)
         })
         
         task.resume()
+    }
+    
+    func createUrlStringFromDictionary(baseUrl: String, parameters:Dictionary<String, String>) -> NSURL {
+        var paramsString = ""
+        
+        for (paramKey, paramValue) in parameters {
+            paramsString += "\(paramKey)=\(paramValue)&"
+        }
+        paramsString = paramsString.substringToIndex(countElements(paramsString) - 1)
+        return NSURL.URLWithString(baseUrl + "?" + paramsString)
+    }
+    
+    func cancelAllTripRequests() {
+        
     }
     
 }
