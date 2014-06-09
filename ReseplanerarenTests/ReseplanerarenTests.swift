@@ -40,9 +40,22 @@ class ReseplanerarenTests: XCTestCase {
         for tripAttributes : AnyObject in tripsAttributes {
             trips.append(Trip(attributes: tripAttributes as NSDictionary))
         }
-
-
+        
+        XCTAssert(trips[0].legs[0].line.labelName == "285", "First trip line should be Älvsnabben 285")
         XCTAssert(trips.count == 5, "There should be 5 trips in json data")
+    }
+    
+    func testLabelName() {
+        var trips: Trip[] = []
+        
+        var tripList: NSDictionary = tripJson["TripList"] as NSDictionary
+        var tripsAttributes: NSArray = tripList.objectForKey("Trip") as NSArray
+        
+        for tripAttributes : AnyObject in tripsAttributes {
+            trips.append(Trip(attributes: tripAttributes as NSDictionary))
+        }
+        
+        XCTAssert(trips[0].legs[0].line.labelName == "285", "First trip line should be Älvsnabben 285")
     }
     
     func testTripLegsAreParsed() {
