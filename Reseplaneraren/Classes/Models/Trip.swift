@@ -22,7 +22,6 @@ class Trip {
         
         if legsAttributes.isKindOfClass(NSArray) {
             for legAttributes : AnyObject in legsAttributes as NSArray {
-                NSLog("%@", legAttributes as NSDictionary)
                 legs.append(TripLeg(attributes: legAttributes as NSDictionary))
             }
         } else if legsAttributes.isKindOfClass(NSDictionary) {
