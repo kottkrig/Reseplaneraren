@@ -63,7 +63,7 @@ class ReseplanerarenTests: XCTestCase {
         
         var tripLocationString = "{\"$\": \"\", \"date\": \"2014-06-09\",\"id\": \"9022014005485003\",\"name\": \"Rosenlund, Göteborg\",\"routeIdx\": \"1\",\"rtDate\": \"2014-06-09\",\"rtTime\": \"19:00\",\"time\": \"19:00\",\"track\": \"C\",\"type\": \"ST\"}"
         
-        var tripLocationAttributes = NSJSONSerialization.JSONObjectWithData(tripLocationString.dataUsingEncoding(NSUTF8StringEncoding), options: NSJSONReadingOptions.MutableContainers, error:nil) as NSDictionary
+        var tripLocationAttributes = convertStringToJsonDictionary(tripLocationString)
         
         var tripLocation = TripLocation(attributes: tripLocationAttributes)
         println("rtTime.description \(tripLocation.rtTime.description)")
@@ -86,6 +86,10 @@ class ReseplanerarenTests: XCTestCase {
         var destinationName: String = leg.destination.name
         
         XCTAssertTrue(destinationName == "Rosenlund, Göteborg", "Location should be Rosenlund")
+    }
+    
+    func convertStringToJsonDictionary(string: String) -> NSDictionary {
+        return NSJSONSerialization.JSONObjectWithData(string.dataUsingEncoding(NSUTF8StringEncoding), options: NSJSONReadingOptions.MutableContainers, error:nil) as NSDictionary
     }
     
 }
