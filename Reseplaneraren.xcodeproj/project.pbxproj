@@ -24,10 +24,16 @@
 		04742553193F8B1A005A9214 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04742552193F8B1A005A9214 /* Images.xcassets */; };
 		0474255F193F8B1A005A9214 /* ReseplanerarenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474255E193F8B1A005A9214 /* ReseplanerarenTests.swift */; };
 		04822E371941EE39008C83DA /* TripQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04822E361941EE39008C83DA /* TripQuery.swift */; };
-		B1B7FEEE59D84739A3E3C7C4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59327E587A344338BCCE84C1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		042067731946143100D183E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04742539193F8B1A005A9214 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04742540193F8B1A005A9214;
+			remoteInfo = Reseplaneraren;
+		};
 		043286B31940E0DA00396A20 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 04742539193F8B1A005A9214 /* Project object */;
@@ -73,8 +79,6 @@
 		0474255D193F8B1A005A9214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0474255E193F8B1A005A9214 /* ReseplanerarenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReseplanerarenTests.swift; sourceTree = "<group>"; };
 		04822E361941EE39008C83DA /* TripQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripQuery.swift; sourceTree = "<group>"; };
-		0D7716F5F20840C1B6C90E1E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		59327E587A344338BCCE84C1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +86,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1B7FEEE59D84739A3E3C7C4 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,7 +164,6 @@
 				04742543193F8B1A005A9214 /* Reseplaneraren */,
 				0474255B193F8B1A005A9214 /* ReseplanerarenTests */,
 				04742542193F8B1A005A9214 /* Products */,
-				0D7716F5F20840C1B6C90E1E /* Pods.xcconfig */,
 				C75EEB0A000B4158A43181D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -216,7 +218,6 @@
 		C75EEB0A000B4158A43181D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				59327E587A344338BCCE84C1 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -257,6 +258,7 @@
 				0474255A193F8B1A005A9214 /* PBXTargetDependency */,
 				043286B41940E0DA00396A20 /* PBXTargetDependency */,
 				043286B61940E0DD00396A20 /* PBXTargetDependency */,
+				042067741946143100D183E0 /* PBXTargetDependency */,
 			);
 			name = ReseplanerarenTests;
 			productName = ReseplanerarenTests;
@@ -385,6 +387,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		042067741946143100D183E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04742540193F8B1A005A9214 /* Reseplaneraren */;
+			targetProxy = 042067731946143100D183E0 /* PBXContainerItemProxy */;
+		};
 		043286B41940E0DA00396A20 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 04742540193F8B1A005A9214 /* Reseplaneraren */;
@@ -495,7 +502,6 @@
 		};
 		04742563193F8B1A005A9214 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D7716F5F20840C1B6C90E1E /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -508,7 +514,6 @@
 		};
 		04742564193F8B1A005A9214 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D7716F5F20840C1B6C90E1E /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
