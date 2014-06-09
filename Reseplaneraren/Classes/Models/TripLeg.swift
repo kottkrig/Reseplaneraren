@@ -10,15 +10,15 @@ import Foundation
 
 class TripLeg {
     
-    let line: Line;
+    let line: Line
     
-    let destination: TripLocation;
-    let origin: TripLocation;
+    let destination: TripLocation
+    let origin: TripLocation
     
     init(attributes: NSDictionary) {
         self.line = Line(attributes: attributes)
         
-        self.destination = TripLocation(attributes: attributes["Destination"] as NSDictionary);
-        self.origin = TripLocation(attributes: attributes["Origin"] as NSDictionary);
+        self.destination = TripLocation(attributes: attributes["Destination"] as NSDictionary)
+        self.origin = TripLocation(attributes: attributes["Origin"] as NSDictionary)
     }
 }

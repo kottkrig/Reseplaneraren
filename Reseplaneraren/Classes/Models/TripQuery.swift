@@ -42,7 +42,7 @@ class TripQuery {
         VasttrafikAPIManager.sharedClient.fetchTripsForQuery(self, success: {trips in
                 self.trips = trips
                 println("Number of trips: \(self.trips.count)")
-                success(trips: newTrips);
+                success(trips: newTrips)
             }, failure: { error in
                 NSLog("Error")
             })

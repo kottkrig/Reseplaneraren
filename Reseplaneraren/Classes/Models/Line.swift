@@ -11,14 +11,14 @@ import UIKit
 
 class Line {
     let name: String
-    let labelName: String?;
-    let type: String;
-    let direction: String?;
+    let labelName: String?
+    let type: String
+    let direction: String?
     
     let foregroundColor: UIColor?
     let backgroundColor: UIColor?
     
-    let accessibility: String?;
+    let accessibility: String?
     
     init(attributes: NSDictionary) {
         
