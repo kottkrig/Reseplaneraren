@@ -58,6 +58,18 @@ class ReseplanerarenTests: XCTestCase {
         XCTAssert(trips[0].legs[0].line.labelName == "285", "First trip line should be Älvsnabben 285")
     }
     
+    func testRealtime() {
+        
+        
+        var tripLocationString = "{\"$\": \"\", \"date\": \"2014-06-09\",\"id\": \"9022014005485003\",\"name\": \"Rosenlund, Göteborg\",\"routeIdx\": \"1\",\"rtDate\": \"2014-06-09\",\"rtTime\": \"19:00\",\"time\": \"19:00\",\"track\": \"C\",\"type\": \"ST\"}"
+        
+        var tripLocationAttributes = NSJSONSerialization.JSONObjectWithData(tripLocationString.dataUsingEncoding(NSUTF8StringEncoding), options: NSJSONReadingOptions.MutableContainers, error:nil) as NSDictionary
+        
+        var tripLocation = TripLocation(attributes: tripLocationAttributes)
+        println("rtTime.description \(tripLocation.rtTime.description)")
+        XCTAssert(tripLocation.rtTime.description == "2014-06-09 17:00:00 +0000", "Realtime should be parsed")
+    }
+    
     func testTripLegsAreParsed() {
         var trips: Trip[] = []
         
