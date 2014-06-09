@@ -11,7 +11,7 @@ import UIKit
 
 class Line {
     let name: String
-    let labelName: String?
+    var labelName: String
     let type: String
     let direction: String?
     
@@ -33,9 +33,11 @@ class Line {
         if let fgColorHexString = attributes["fgColor"] as? String {
             backgroundColor = UIColor.colorWithHexString(fgColorHexString)
         }
-                
+        
+        let characterSetWithoutDigits = NSCharacterSet.decimalDigitCharacterSet().invertedSet
+        
         name = attributes.objectForKey("name") as String
-        //self.labelName = self.name.stringByTrimmingCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet)
+        labelName = name.stringByTrimmingCharactersInSet(characterSetWithoutDigits)
         type = attributes.objectForKey("type") as String
         direction = attributes.objectForKey("direction") as? String
     }
