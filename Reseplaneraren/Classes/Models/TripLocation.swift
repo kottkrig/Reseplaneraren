@@ -8,12 +8,12 @@
 
 import Foundation
 
-class TripLocation: NSObject {
+class TripLocation {
     
     let name: String
     let type: String
-    let time: NSDate?
-    let rtTime: NSDate?
+    var time: NSDate?
+    var rtTime: NSDate?
     //let locationId: String
     
     init(attributes: NSDictionary) {
@@ -22,5 +22,9 @@ class TripLocation: NSObject {
         type = attributes["type"] as String
                 
         time = DateUtils.createNSDateFromDateString(attributes["date"] as String, timeString: attributes["time"] as String)
+        
+        if let rtDateString = attributes["rtDate"] as? String {
+            rtTime = DateUtils.createNSDateFromDateString(rtDateString, timeString: attributes["rtTime"] as String)
+        }
     }
 }
