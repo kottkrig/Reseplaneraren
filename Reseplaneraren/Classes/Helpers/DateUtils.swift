@@ -9,11 +9,11 @@
 import Foundation
 
 class DateUtils {
-    class func createNSDateFromDateString(dateString: String, timeString: String) -> NSDate {
+    class func createNSDateFromDateString(dateString: String, timeString: String) -> NSDate? {
         let dateTimeString = dateString + " " + timeString
         
         var formatter = NSDateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm";
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
         return formatter.dateFromString(dateTimeString)
     }
 }
