@@ -49,14 +49,10 @@ class VasttrafikAPIManager {
             
             let tripJson: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
             
-            var trips: Trip[] = []
+            var tripList: NSDictionary = tripJson["TripList"] as Dictionary<String, AnyObject>
+            var tripsAttributes = tripList["Trip"] as Array<Dictionary<String, AnyObject>>
             
-            var tripList: NSDictionary = tripJson["TripList"] as NSDictionary
-            var tripsAttributes: NSArray = tripList["Trip"] as NSArray
-            
-            for tripAttributes: AnyObject in tripsAttributes {
-                trips.append(Trip(attributes: tripAttributes as NSDictionary))
-            }
+            var trips = tripsAttributes.map { dict in Trip(attributes: dict) }
             
             success(trips)
         })
