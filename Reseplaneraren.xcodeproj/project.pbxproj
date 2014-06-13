@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042067781946233D00D183E0 /* TripLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042067771946233D00D183E0 /* TripLocationTests.swift */; };
 		043286E419411A0A00396A20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043286D919411A0A00396A20 /* AppDelegate.swift */; };
 		043286E519411A0A00396A20 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043286DB19411A0A00396A20 /* Line.swift */; };
 		043286E619411A0A00396A20 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043286DC19411A0A00396A20 /* Trip.swift */; };
@@ -15,7 +16,6 @@
 		043286E919411A0A00396A20 /* VasttrafikAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043286E019411A0A00396A20 /* VasttrafikAPIManager.swift */; };
 		043286EA19411A0A00396A20 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043286E219411A0A00396A20 /* DetailViewController.swift */; };
 		043286EB19411A0A00396A20 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043286E319411A0A00396A20 /* MasterViewController.swift */; };
-		043286EE1941213900396A20 /* VasttrafikAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043286ED1941213900396A20 /* VasttrafikAPIClient.swift */; };
 		043286F01941CDC700396A20 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043286EF1941CDC700396A20 /* APIKey.swift */; };
 		043286F51941D91100396A20 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043286F41941D91100396A20 /* DateUtils.swift */; };
 		043286F71941E33200396A20 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043286F61941E33200396A20 /* UIColor+Hex.swift */; };
@@ -28,6 +28,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		042067731946143100D183E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04742539193F8B1A005A9214 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04742540193F8B1A005A9214;
+			remoteInfo = Reseplaneraren;
+		};
+		042067751946143100D183E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 04742539193F8B1A005A9214 /* Project object */;
 			proxyType = 1;
@@ -58,6 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		042067771946233D00D183E0 /* TripLocationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripLocationTests.swift; sourceTree = "<group>"; };
 		043286D919411A0A00396A20 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		043286DB19411A0A00396A20 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		043286DC19411A0A00396A20 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
@@ -66,7 +74,6 @@
 		043286E019411A0A00396A20 /* VasttrafikAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VasttrafikAPIManager.swift; sourceTree = "<group>"; };
 		043286E219411A0A00396A20 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		043286E319411A0A00396A20 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		043286ED1941213900396A20 /* VasttrafikAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VasttrafikAPIClient.swift; sourceTree = "<group>"; };
 		043286EF1941CDC700396A20 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		043286F41941D91100396A20 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		043286F61941E33200396A20 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
@@ -135,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				043286E019411A0A00396A20 /* VasttrafikAPIManager.swift */,
-				043286ED1941213900396A20 /* VasttrafikAPIClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -203,6 +209,7 @@
 			children = (
 				0474255E193F8B1A005A9214 /* ReseplanerarenTests.swift */,
 				0474255C193F8B1A005A9214 /* Supporting Files */,
+				042067771946233D00D183E0 /* TripLocationTests.swift */,
 			);
 			path = ReseplanerarenTests;
 			sourceTree = "<group>";
@@ -229,11 +236,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04742562193F8B1A005A9214 /* Build configuration list for PBXNativeTarget "Reseplaneraren" */;
 			buildPhases = (
-				8F3FF4C68C2C4E2ABDED383E /* Check Pods Manifest.lock */,
 				0474253D193F8B1A005A9214 /* Sources */,
 				0474253E193F8B1A005A9214 /* Frameworks */,
 				0474253F193F8B1A005A9214 /* Resources */,
-				B2026DAAA9AB409DBA381CA0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,6 +264,7 @@
 				043286B41940E0DA00396A20 /* PBXTargetDependency */,
 				043286B61940E0DD00396A20 /* PBXTargetDependency */,
 				042067741946143100D183E0 /* PBXTargetDependency */,
+				042067761946143100D183E0 /* PBXTargetDependency */,
 			);
 			name = ReseplanerarenTests;
 			productName = ReseplanerarenTests;
@@ -321,39 +327,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		8F3FF4C68C2C4E2ABDED383E /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B2026DAAA9AB409DBA381CA0 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		0474253D193F8B1A005A9214 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -370,7 +343,6 @@
 				043286E819411A0A00396A20 /* TripLocation.swift in Sources */,
 				043286F71941E33200396A20 /* UIColor+Hex.swift in Sources */,
 				043286E919411A0A00396A20 /* VasttrafikAPIManager.swift in Sources */,
-				043286EE1941213900396A20 /* VasttrafikAPIClient.swift in Sources */,
 				043286EA19411A0A00396A20 /* DetailViewController.swift in Sources */,
 				04822E371941EE39008C83DA /* TripQuery.swift in Sources */,
 			);
@@ -381,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0474255F193F8B1A005A9214 /* ReseplanerarenTests.swift in Sources */,
+				042067781946233D00D183E0 /* TripLocationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +364,11 @@
 			isa = PBXTargetDependency;
 			target = 04742540193F8B1A005A9214 /* Reseplaneraren */;
 			targetProxy = 042067731946143100D183E0 /* PBXContainerItemProxy */;
+		};
+		042067761946143100D183E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04742540193F8B1A005A9214 /* Reseplaneraren */;
+			targetProxy = 042067751946143100D183E0 /* PBXContainerItemProxy */;
 		};
 		043286B41940E0DA00396A20 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
