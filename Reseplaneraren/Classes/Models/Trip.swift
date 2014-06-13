@@ -16,17 +16,16 @@ class Trip {
     let startTime: NSDate?
     let endTime: NSDate?
     
-    init(attributes: NSDictionary) {
+    init(attributes: Dictionary<String, AnyObject>) {
         
-        var legsAttributes: AnyObject = attributes["Leg"] as AnyObject
+        var legsAttributes: AnyObject = attributes["Leg"]!
         
-        if legsAttributes.isKindOfClass(NSArray) {
-            for legAttributes : AnyObject in legsAttributes as NSArray {
-                legs.append(TripLeg(attributes: legAttributes as NSDictionary))
+        if let legsArray = legsAttributes as? Dictionary<String, AnyObject>[] {
+            for legAttributes in legsArray {
+                legs.append(TripLeg(attributes: legAttributes))
             }
-        } else if legsAttributes.isKindOfClass(NSDictionary) {
-            var tripLeg = TripLeg(attributes: legsAttributes as NSDictionary)
-            legs.append(tripLeg)
+        } else if let legAttributes = legsAttributes as? Dictionary<String, AnyObject> {
+            legs.append(TripLeg(attributes: legAttributes))
         }
                 
         startTime = legs[0].origin.time

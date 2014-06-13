@@ -34,11 +34,11 @@ class ReseplanerarenTests: XCTestCase {
     func testAllTripsAreParsed() {
         var trips: Trip[] = []
 
-        var tripList: NSDictionary = tripJson["TripList"] as NSDictionary
-        var tripsAttributes: NSArray = tripList.objectForKey("Trip") as NSArray
+        var tripList = tripJson["TripList"] as Dictionary<String, AnyObject>
+        var tripsAttributes = tripList["Trip"] as AnyObject[]!
         
         for tripAttributes : AnyObject in tripsAttributes {
-            trips.append(Trip(attributes: tripAttributes as NSDictionary))
+            trips.append(Trip(attributes: tripAttributes as Dictionary<String, AnyObject>))
         }
         
         XCTAssert(trips[0].legs[0].line.labelName == "285", "First trip line should be Älvsnabben 285")
@@ -52,7 +52,7 @@ class ReseplanerarenTests: XCTestCase {
         var tripsAttributes: NSArray = tripList.objectForKey("Trip") as NSArray
         
         for tripAttributes : AnyObject in tripsAttributes {
-            trips.append(Trip(attributes: tripAttributes as NSDictionary))
+            trips.append(Trip(attributes: tripAttributes as Dictionary<String, AnyObject>))
         }
         
         XCTAssert(trips[0].legs[0].line.labelName == "285", "First trip line should be Älvsnabben 285")
@@ -77,7 +77,7 @@ class ReseplanerarenTests: XCTestCase {
         var tripsAttributes: NSArray = tripList["Trip"] as NSArray
         
         for tripAttributes: AnyObject in tripsAttributes {
-            trips.append(Trip(attributes: tripAttributes as NSDictionary))
+            trips.append(Trip(attributes: tripAttributes as Dictionary<String, AnyObject>))
         }
         
         let trip = trips[0]
@@ -88,8 +88,8 @@ class ReseplanerarenTests: XCTestCase {
         XCTAssertTrue(destinationName == "Rosenlund, Göteborg", "Location should be Rosenlund")
     }
     
-    func convertStringToJsonDictionary(string: String) -> NSDictionary {
-        return NSJSONSerialization.JSONObjectWithData(string.dataUsingEncoding(NSUTF8StringEncoding), options: NSJSONReadingOptions.MutableContainers, error:nil) as NSDictionary
+    func convertStringToJsonDictionary(string: String) -> Dictionary<String, AnyObject> {
+        return NSJSONSerialization.JSONObjectWithData(string.dataUsingEncoding(NSUTF8StringEncoding), options: NSJSONReadingOptions.MutableContainers, error:nil) as Dictionary<String, AnyObject>
     }
     
 }

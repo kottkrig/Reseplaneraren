@@ -15,10 +15,10 @@ class TripLeg {
     let destination: TripLocation
     let origin: TripLocation
     
-    init(attributes: NSDictionary) {
+    init(attributes: Dictionary<String, AnyObject>) {
         self.line = Line(attributes: attributes)
         
-        self.destination = TripLocation(attributes: attributes["Destination"] as NSDictionary)
-        self.origin = TripLocation(attributes: attributes["Origin"] as NSDictionary)
+        self.destination = TripLocation(attributes: attributes["Destination"] as Dictionary<String, AnyObject>!)
+        self.origin = TripLocation(attributes: attributes["Origin"] as Dictionary<String, AnyObject>!)
     }
 }

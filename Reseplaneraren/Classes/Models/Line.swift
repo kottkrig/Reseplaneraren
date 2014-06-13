@@ -20,25 +20,25 @@ class Line {
     
     let accessibility: String?
     
-    init(attributes: NSDictionary) {
+    init(attributes: Dictionary<String, AnyObject>) {
         
         // Västtrafik tycker av någon outgrundlig anledning att den röda färgen
         // i exempelvis femmans spårvagn är förgrundsfärg och vitt är bakgrundsfärgen.
         // Jag håller inte med, därför är dessa färger omvända från hur deras api ser ut.
         
-        if let bgColorHexString = attributes["bgColor"] as? String {
+        if let bgColorHexString = attributes["bgColor"] as? NSString {
             foregroundColor = UIColor.colorWithHexString(bgColorHexString)
         }
         
-        if let fgColorHexString = attributes["fgColor"] as? String {
+        if let fgColorHexString = attributes["fgColor"] as? NSString {
             backgroundColor = UIColor.colorWithHexString(fgColorHexString)
         }
         
         let characterSetWithoutDigits = NSCharacterSet.decimalDigitCharacterSet().invertedSet
         
-        name = attributes.objectForKey("name") as String
+        name = attributes["name"] as NSString
         labelName = name.stringByTrimmingCharactersInSet(characterSetWithoutDigits)
-        type = attributes.objectForKey("type") as String
-        direction = attributes.objectForKey("direction") as? String
+        type = attributes["type"] as NSString
+        direction = attributes["direction"] as? NSString
     }
 }

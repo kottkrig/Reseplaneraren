@@ -16,16 +16,16 @@ class TripLocation {
     var rtTime: NSDate?
     let locationId: String
     
-    init(attributes: NSDictionary) {
-        
-        name = attributes["name"] as String
-        type = attributes["type"] as String
-        locationId = attributes["id"] as String
+    init(attributes: Dictionary<String, AnyObject>) {
                 
-        time = DateUtils.createNSDateFromDateString(attributes["date"] as String, timeString: attributes["time"] as String)
+        name = attributes["name"] as NSString
+        type = attributes["type"] as NSString
+        locationId = attributes["id"] as NSString
+                
+        time = DateUtils.createNSDateFromDateString(attributes["date"] as NSString, timeString: attributes["time"] as NSString)
         
-        if let rtDateString = attributes["rtDate"] as? String {
-            rtTime = DateUtils.createNSDateFromDateString(rtDateString, timeString: attributes["rtTime"] as String)
+        if let rtDateString = attributes["rtDate"] as? NSString {
+            rtTime = DateUtils.createNSDateFromDateString(rtDateString, timeString: attributes["rtTime"] as NSString)
         }
     }
 }

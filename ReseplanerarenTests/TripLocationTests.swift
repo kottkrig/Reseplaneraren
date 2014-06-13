@@ -43,8 +43,8 @@ class TripLocationTests: XCTestCase {
         XCTAssert(tripLocation!.locationId == "9022014005485003")
     }
     
-    func convertStringToJsonDictionary(string: String) -> NSDictionary {
-        return NSJSONSerialization.JSONObjectWithData(string.dataUsingEncoding(NSUTF8StringEncoding), options: NSJSONReadingOptions.MutableContainers, error:nil) as NSDictionary
+    func convertStringToJsonDictionary(string: String) -> Dictionary<String, AnyObject> {
+        return NSJSONSerialization.JSONObjectWithData(string.dataUsingEncoding(NSUTF8StringEncoding), options: NSJSONReadingOptions.MutableContainers, error:nil) as Dictionary<String, AnyObject>
     }
     
 }
