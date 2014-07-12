@@ -25,11 +25,11 @@ class VasttrafikAPIManager {
         }
     }
     
-    func fetchTripsForQuery(tripQuery: TripQuery, success:(Trip[]) -> (), failure:(NSError) -> ()) {
+    func fetchTripsForQuery(tripQuery: TripQuery, success:([Trip]) -> (), failure:(NSError) -> ()) {
         fetchTripsWitchSearchParameters(tripQuery.queryParameters, success: success, failure: failure)
     }
     
-    func fetchTripsWitchSearchParameters(searchParams: Dictionary<String, String>, success:(Trip[]) -> (), failure:(NSError) -> ()) {
+    func fetchTripsWitchSearchParameters(searchParams: Dictionary<String, String>, success:([Trip]) -> (), failure:(NSError) -> ()) {
         
         var apiParams = Dictionary<String, String>()
         apiParams["format"] = "json"
@@ -50,9 +50,9 @@ class VasttrafikAPIManager {
             let tripJson: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
             
             var tripList: NSDictionary = tripJson["TripList"] as Dictionary<String, AnyObject>
-            var tripsAttributes = tripList["Trip"] as Array<Dictionary<String, AnyObject>>
+            var tripsAttributes = tripList["Trip"] as [Dictionary<String, AnyObject>]
             
-            var trips = tripsAttributes.map { dict in Trip(attributes: dict) }
+            var trips = tripsAttributes.map { dict in Trip(json: JSON(dict)) }
             
             success(trips)
         })

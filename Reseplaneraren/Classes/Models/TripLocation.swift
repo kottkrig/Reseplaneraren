@@ -10,22 +10,28 @@ import Foundation
 
 class TripLocation {
     
-    let name: String
-    let type: String
+    let name: String?
+    let type: String?
     var time: NSDate?
     var rtTime: NSDate?
-    let locationId: String
+    let locationId: String?
     
-    init(attributes: Dictionary<String, AnyObject>) {
+    init(json: JSON) {
                 
-        name = attributes["name"] as NSString
-        type = attributes["type"] as NSString
-        locationId = attributes["id"] as NSString
-                
-        time = DateUtils.createNSDateFromDateString(attributes["date"] as NSString, timeString: attributes["time"] as NSString)
+        name = json["name"]?.string
+        type = json["type"]?.string
+        locationId = json["id"]?.string
         
-        if let rtDateString = attributes["rtDate"] as? NSString {
-            rtTime = DateUtils.createNSDateFromDateString(rtDateString, timeString: attributes["rtTime"] as NSString)
+        if let dateString = json["date"]?.string {
+            if let timeString = json["time"]?.string {
+                time = DateUtils.createNSDateFromDateString(dateString, timeString: timeString)
+            }
+        }
+        
+        if let rtDateString = json["rtDate"]?.string {
+            if let rtTimeString = json["rtTime"]?.string {
+                rtTime = DateUtils.createNSDateFromDateString(rtDateString, timeString: rtTimeString)
+            }
         }
     }
 }

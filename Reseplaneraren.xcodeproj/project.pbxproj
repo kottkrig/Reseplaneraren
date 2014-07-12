@@ -28,6 +28,7 @@
 		04FC4384196C5AB6009A5488 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FC4383196C5AB6009A5488 /* TodayViewController.swift */; };
 		04FC4386196C5AB6009A5488 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FC4385196C5AB6009A5488 /* MainInterface.storyboard */; };
 		04FC4389196C5AB6009A5488 /* Time to x.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 04FC437D196C5AB6009A5488 /* Time to x.appex */; };
+		747AC88819701439003CB740 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747AC88719701439003CB740 /* JSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		04FC4382196C5AB6009A5488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04FC4383196C5AB6009A5488 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		04FC4385196C5AB6009A5488 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		747AC88719701439003CB740 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 		04742543193F8B1A005A9214 /* Reseplaneraren */ = {
 			isa = PBXGroup;
 			children = (
+				747AC88619701439003CB740 /* ExternalFrameworks */,
 				043286EF1941CDC700396A20 /* APIKey.swift */,
 				043286D719411A0A00396A20 /* Classes */,
 				0474254F193F8B1A005A9214 /* Main.storyboard */,
@@ -285,6 +288,14 @@
 				04FC4382196C5AB6009A5488 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		747AC88619701439003CB740 /* ExternalFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+				747AC88719701439003CB740 /* JSON.swift */,
+			);
+			path = ExternalFrameworks;
 			sourceTree = "<group>";
 		};
 		C75EEB0A000B4158A43181D4 /* Frameworks */ = {
@@ -375,6 +386,7 @@
 					};
 					04FC437C196C5AB6009A5488 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = X23ZFVGL7W;
 					};
 				};
 			};
@@ -431,6 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				043286E619411A0A00396A20 /* Trip.swift in Sources */,
+				747AC88819701439003CB740 /* JSON.swift in Sources */,
 				043286F51941D91100396A20 /* DateUtils.swift in Sources */,
 				043286E519411A0A00396A20 /* Line.swift in Sources */,
 				043286E419411A0A00396A20 /* AppDelegate.swift in Sources */,
@@ -657,6 +670,8 @@
 		04FC438C196C5AB6009A5488 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -665,6 +680,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -672,10 +688,13 @@
 		04FC438D196C5AB6009A5488 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Time to x/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -717,6 +736,7 @@
 				04FC438D196C5AB6009A5488 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

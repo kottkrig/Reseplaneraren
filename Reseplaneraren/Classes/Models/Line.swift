@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 class Line {
-    let name: String
-    var labelName: String
-    let type: String
+    let name: String?
+    var labelName: String?
+    let type: String?
     let direction: String?
     
     let foregroundColor: UIColor?
@@ -20,25 +20,25 @@ class Line {
     
     let accessibility: String?
     
-    init(attributes: Dictionary<String, AnyObject>) {
+    init(json: JSON) {
         
         // Västtrafik tycker av någon outgrundlig anledning att den röda färgen
         // i exempelvis femmans spårvagn är förgrundsfärg och vitt är bakgrundsfärgen.
         // Jag håller inte med, därför är dessa färger omvända från hur deras api ser ut.
         
-        if let bgColorHexString = attributes["bgColor"] as? NSString {
+        if let bgColorHexString = json["bgColor"]?.string {
             foregroundColor = UIColor.colorWithHexString(bgColorHexString)
         }
         
-        if let fgColorHexString = attributes["fgColor"] as? NSString {
+        if let fgColorHexString = json["fgColor"]?.string {
             backgroundColor = UIColor.colorWithHexString(fgColorHexString)
         }
         
         let characterSetWithoutDigits = NSCharacterSet.decimalDigitCharacterSet().invertedSet
         
-        name = attributes["name"] as NSString
-        labelName = name.stringByTrimmingCharactersInSet(characterSetWithoutDigits)
-        type = attributes["type"] as NSString
-        direction = attributes["direction"] as? NSString
+        name = json["name"]?.string
+        labelName = name?.stringByTrimmingCharactersInSet(characterSetWithoutDigits)
+        type = json["type"]?.string
+        direction = json["direction"]?.string
     }
 }

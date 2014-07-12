@@ -15,10 +15,10 @@ class TripLeg {
     let destination: TripLocation
     let origin: TripLocation
     
-    init(attributes: Dictionary<String, AnyObject>) {
-        self.line = Line(attributes: attributes)
+    init(json: JSON) {
+        self.line = Line(json: json)
         
-        self.destination = TripLocation(attributes: attributes["Destination"] as Dictionary<String, AnyObject>!)
-        self.origin = TripLocation(attributes: attributes["Origin"] as Dictionary<String, AnyObject>!)
+        self.destination = TripLocation(json: json["Destination"]!)
+        self.origin = TripLocation(json: json["Origin"]!)
     }
 }

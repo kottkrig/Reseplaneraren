@@ -10,22 +10,22 @@ import Foundation
 
 class Trip {
     
-    var legs: TripLeg[] = []
+    var legs: [TripLeg] = []
     let duration: NSDateComponents?
     
     let startTime: NSDate?
     let endTime: NSDate?
     
-    init(attributes: Dictionary<String, AnyObject>) {
+    init(json: JSON) {
         
-        var legsAttributes: AnyObject = attributes["Leg"]!
+        var legsAttributes = json["Leg"]
         
-        if let legsArray = legsAttributes as? Dictionary<String, AnyObject>[] {
+        if let legsArray = json["Leg"]?.array {
             for legAttributes in legsArray {
-                legs.append(TripLeg(attributes: legAttributes))
+                legs.append(TripLeg(json: legAttributes))
             }
-        } else if let legAttributes = legsAttributes as? Dictionary<String, AnyObject> {
-            legs.append(TripLeg(attributes: legAttributes))
+        } else if let legAttributes = json["Leg"] {
+            legs.append(TripLeg(json: legAttributes))
         }
                 
         startTime = legs[0].origin.time

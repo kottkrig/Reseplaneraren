@@ -11,7 +11,7 @@ import MapKit
 
 class TripQuery {
     
-    var trips: Trip[] = []
+    var trips: [Trip] = []
     var queryParameters = Dictionary<String, String>()
     
     var isPrefetchPossible: Bool {
@@ -34,9 +34,9 @@ class TripQuery {
         }
     }
     
-    func fetchTripsWithSuccess(success: (trips: Trip[]) -> ()) {
+    func fetchTripsWithSuccess(success: (trips: [Trip]) -> ()) {
         
-        var newTrips: Trip[] = []
+        var newTrips: [Trip] = []
         
         VasttrafikAPIManager.sharedClient.cancelAllTripRequests()
         VasttrafikAPIManager.sharedClient.fetchTripsForQuery(self, success: {trips in
