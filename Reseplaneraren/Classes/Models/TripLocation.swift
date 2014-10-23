@@ -18,18 +18,18 @@ class TripLocation {
     
     init(json: JSON) {
                 
-        name = json["name"]?.string
-        type = json["type"]?.string
-        locationId = json["id"]?.string
+        name = json["name"].string
+        type = json["type"].string
+        locationId = json["id"].string
         
-        if let dateString = json["date"]?.string {
-            if let timeString = json["time"]?.string {
+        if let dateString = json["date"].string {
+            if let timeString = json["time"].string {
                 time = DateUtils.createNSDateFromDateString(dateString, timeString: timeString)
             }
         }
         
-        if let rtDateString = json["rtDate"]?.string {
-            if let rtTimeString = json["rtTime"]?.string {
+        if let rtDateString = json["rtDate"].string {
+            if let rtTimeString = json["rtTime"].string {
                 rtTime = DateUtils.createNSDateFromDateString(rtDateString, timeString: rtTimeString)
             }
         }

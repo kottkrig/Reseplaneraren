@@ -18,14 +18,12 @@ class Trip {
     
     init(json: JSON) {
         
-        var legsAttributes = json["Leg"]
-        
-        if let legsArray = json["Leg"]?.array {
+        if let legsArray = json["Leg"].array {
             for legAttributes in legsArray {
                 legs.append(TripLeg(json: legAttributes))
             }
-        } else if let legAttributes = json["Leg"] {
-            legs.append(TripLeg(json: legAttributes))
+        } else {
+            legs.append(TripLeg(json: json["Leg"]))
         }
                 
         startTime = legs[0].origin.time

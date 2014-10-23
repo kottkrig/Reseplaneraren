@@ -18,7 +18,7 @@ class TripLeg {
     init(json: JSON) {
         self.line = Line(json: json)
         
-        self.destination = TripLocation(json: json["Destination"]!)
-        self.origin = TripLocation(json: json["Origin"]!)
+        self.destination = TripLocation(json: json["Destination"])
+        self.origin = TripLocation(json: json["Origin"])
     }
 }

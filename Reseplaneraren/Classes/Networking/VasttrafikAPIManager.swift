@@ -39,20 +39,25 @@ class VasttrafikAPIManager {
             apiParams[queryKey] = queryValue
         }
         
-        var url: NSURL = createUrlStringFromDictionary(baseUrl + "trip", parameters: apiParams)
-        var request = NSURLRequest(URL: url)
+        var url: NSURL? = createUrlStringFromDictionary(baseUrl + "trip", parameters: apiParams)
+        var request = NSURLRequest(URL: url!)
         
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession.sharedSession()
         
         let task: NSURLSessionTask = session.dataTaskWithRequest(request, completionHandler: {(data: NSData!, response: NSURLResponse!, error: NSError!) in
             
-            let tripJson: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+            let dataString = NSString(data: data, encoding: NSUTF8StringEncoding)
             
-            var tripList: NSDictionary = tripJson["TripList"] as Dictionary<String, AnyObject>
-            var tripsAttributes = tripList["Trip"] as [Dictionary<String, AnyObject>]
+            let tripJson = JSON(dataString!)
             
-            var trips = tripsAttributes.map { dict in Trip(json: JSON(dict)) }
+            var trips: [Trip] = []
+            
+            if let tripsAttributes = tripJson["TripList"]["Trip"].array {
+                for (_, value) in enumerate(tripsAttributes) {
+                    trips.append(Trip(json: value))
+                }
+            }
             
             success(trips)
         })
@@ -60,14 +65,15 @@ class VasttrafikAPIManager {
         task.resume()
     }
     
-    func createUrlStringFromDictionary(baseUrl: String, parameters:Dictionary<String, String>) -> NSURL {
+    func createUrlStringFromDictionary(baseUrl: String, parameters:Dictionary<String, String>) -> NSURL? {
         var paramsString = ""
         
         for (paramKey, paramValue) in parameters {
             paramsString += "\(paramKey)=\(paramValue)&"
         }
-        paramsString = paramsString.substringToIndex(countElements(paramsString) - 1)
-        return NSURL.URLWithString(baseUrl + "?" + paramsString)
+        
+        paramsString = paramsString.substringToIndex(paramsString.endIndex.predecessor())
+        return NSURL(string: baseUrl + "?" + paramsString)
     }
     
     func cancelAllTripRequests() {
