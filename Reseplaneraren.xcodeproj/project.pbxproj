@@ -58,6 +58,7 @@
 		746DB6DF19F96C39001976B1 /* JSValue.Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DB6D419F96C39001976B1 /* JSValue.Parsing.swift */; };
 		746DB6E019F96C39001976B1 /* JSValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DB6D519F96C39001976B1 /* JSValue.swift */; };
 		746DB6E119F96C39001976B1 /* ReplayableGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DB6D619F96C39001976B1 /* ReplayableGenerator.swift */; };
+		749382DE1A01512C00962670 /* TripSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749382DD1A01512C00962670 /* TripSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +166,7 @@
 		746DB6D419F96C39001976B1 /* JSValue.Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSValue.Parsing.swift; sourceTree = "<group>"; };
 		746DB6D519F96C39001976B1 /* JSValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSValue.swift; sourceTree = "<group>"; };
 		746DB6D619F96C39001976B1 /* ReplayableGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplayableGenerator.swift; sourceTree = "<group>"; };
+		749382DD1A01512C00962670 /* TripSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripSearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 			children = (
 				043286E219411A0A00396A20 /* DetailViewController.swift */,
 				043286E319411A0A00396A20 /* MasterViewController.swift */,
+				749382DD1A01512C00962670 /* TripSearchViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				043286E619411A0A00396A20 /* Trip.swift in Sources */,
 				043286F51941D91100396A20 /* DateUtils.swift in Sources */,
 				043286E519411A0A00396A20 /* Line.swift in Sources */,
+				749382DE1A01512C00962670 /* TripSearchViewController.swift in Sources */,
 				746DB6DE19F96C39001976B1 /* JSValue.Literals.swift in Sources */,
 				043286E419411A0A00396A20 /* AppDelegate.swift in Sources */,
 				043286E719411A0A00396A20 /* TripLeg.swift in Sources */,
