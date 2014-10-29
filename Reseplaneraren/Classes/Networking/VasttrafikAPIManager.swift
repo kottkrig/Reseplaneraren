@@ -49,13 +49,13 @@ class VasttrafikAPIManager {
             
             let dataString = NSString(data: data, encoding: NSUTF8StringEncoding)
             
-            let tripJson = JSON(dataString!)
-            
             var trips: [Trip] = []
             
-            if let tripsAttributes = tripJson["TripList"]["Trip"].array {
-                for (_, value) in enumerate(tripsAttributes) {
-                    trips.append(Trip(json: value))
+            if let tripJson = JSON.parse(data).value {
+                if let tripsAttributes = tripJson["TripList"]["Trip"].array {
+                    for (_, value) in enumerate(tripsAttributes) {
+                        trips.append(Trip(json: value))
+                    }
                 }
             }
             
@@ -73,7 +73,9 @@ class VasttrafikAPIManager {
         }
         
         paramsString = paramsString.substringToIndex(paramsString.endIndex.predecessor())
-        return NSURL(string: baseUrl + "?" + paramsString)
+        var urlString = baseUrl + "?" + paramsString
+        let url = NSURL(string: urlString.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)
+        return url
     }
     
     func cancelAllTripRequests() {
