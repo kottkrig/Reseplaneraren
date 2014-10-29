@@ -15,6 +15,8 @@ class TripSearchViewController: UIViewController, CLLocationManagerDelegate {
     required init(coder aDecoder: NSCoder) {
         
         locationManager = CLLocationManager()
+        tripQuery = TripQuery()
+        
         super.init(coder: aDecoder)
     }
     
@@ -22,6 +24,8 @@ class TripSearchViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager! = nil
     var currentLocation: CLLocation?
+    
+    var tripQuery: TripQuery
     
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var favouritesCollectionView: UICollectionView!
@@ -36,6 +40,8 @@ class TripSearchViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         
+        tripQuery.setDestinationLocationId("9021014001980000")
+        
         // Do any additional setup after loading the view.
     }
     
@@ -44,6 +50,10 @@ class TripSearchViewController: UIViewController, CLLocationManagerDelegate {
         
         if let newLocation = locations.last as? CLLocation {
             currentLocation = newLocation
+            
+            tripQuery.setOriginCoordinate(newLocation.coordinate)
+            tripQuery.prefetchTripsIfPossible()
+            
             var adjustedRegion = mapView.regionThatFits(MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 3000, 3000))
             mapView.setRegion(adjustedRegion, animated: true)
         }
