@@ -28,5 +28,9 @@ class Trip {
                 
         startTime = legs[0].origin.time
         endTime = legs[legs.count - 1].destination.time
+        
+        let unitFlags = NSCalendarUnit.HourCalendarUnit | NSCalendarUnit.MinuteCalendarUnit | NSCalendarUnit.DayCalendarUnit | NSCalendarUnit.MonthCalendarUnit
+        
+        duration = NSCalendar.currentCalendar().components(unitFlags, fromDate: startTime!, toDate: endTime!, options: NSCalendarOptions.allZeros)
     }
 }
