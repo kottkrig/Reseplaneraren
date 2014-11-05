@@ -20,6 +20,8 @@ class TripSearchViewController: UIViewController, CLLocationManagerDelegate {
         super.init(coder: aDecoder)
     }
     
+    var trips: [Trip] = []
+    
     var managedObjectContext: NSManagedObjectContext? = nil
     
     var locationManager: CLLocationManager! = nil
@@ -69,18 +71,27 @@ class TripSearchViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func searchButtonPressed(AnyObject) {
-        
+        if let _ = self.tripQuery.trips {
+            self.performSegueWithIdentifier("SearchToResultSegue", sender: self)
+        } else {
+            self.tripQuery.fetchTripsWithSuccess({ (trips) -> () in
+                self.performSegueWithIdentifier("SearchToResultSegue", sender: self)
+            })
+        }
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        let tripResultViewController = segue.destinationViewController as TripResultViewController
+        tripResultViewController.trips = self.tripQuery.trips
     }
-    */
+    
 
 }
