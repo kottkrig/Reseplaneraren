@@ -22,16 +22,14 @@ extension UIColor {
         }
         
         var rString = cString.substringWithRange(Range(start: cString.startIndex, end: advance(cString.startIndex, 2)))
-        
         var gString = cString.substringWithRange(Range(start: advance(cString.startIndex, 2), end: advance(cString.startIndex, 4)))
         var bString = cString.substringWithRange(Range(start: advance(cString.startIndex, 4), end: advance(cString.startIndex, 6)))
         
         var r:CUnsignedInt = 0, g:CUnsignedInt = 0, b:CUnsignedInt = 0;
         NSScanner(string: rString).scanHexInt(&r)
-        NSScanner(string: gString).scanHexInt(&r)
-        NSScanner(string: bString).scanHexInt(&r)
+        NSScanner(string: gString).scanHexInt(&g)
+        NSScanner(string: bString).scanHexInt(&b)
         
-        return UIColor()
-        //return UIColor(red: Double(r) / 255.0, green: Double(g) / 255.0, blue: Double(b) / 255.0, alpha: Double(1))
+        return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(1))
     }
 }
