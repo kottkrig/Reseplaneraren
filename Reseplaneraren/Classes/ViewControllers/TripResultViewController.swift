@@ -59,10 +59,7 @@ class TripResultViewController: UIViewController, UITableViewDelegate, UITableVi
         let cellIdentifier = "TripCell"
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as TripCell
-        if let trips = self.trips {
-            let trip = trips[indexPath.row]
-            cell.configureForTrip(trip)
-        }
+        cell.trip = self.trips?[indexPath.row]
         
         return cell
     }

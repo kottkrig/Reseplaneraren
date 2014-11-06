@@ -12,7 +12,12 @@ class TripCell: UITableViewCell {
     
     @IBOutlet weak var timeLabel: UILabel!
     
-    let dateFormatter = NSDateFormatter()
+    var trip: Trip? {
+        didSet {
+            // Update the view.
+            self.configureView()
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,12 +30,10 @@ class TripCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureForTrip(trip: Trip) {
+    func configureView() {
         
-        dateFormatter.dateFormat = "HH:mm"
-        
-        if let startTime = trip.startTime {
-            if let endTime = trip.endTime {
+        if let startTime = trip?.startTime {
+            if let endTime = trip?.endTime {
                 timeLabel.text = "\(dateFormatter.stringFromDate(startTime)) - \(dateFormatter.stringFromDate(endTime)) (xx min)"
             }
         }
@@ -38,7 +41,7 @@ class TripCell: UITableViewCell {
         var dx = timeLabel.frame.origin.x
         var dy = timeLabel.frame.origin.y + timeLabel.frame.size.height
         
-        for leg in trip.legs {
+        for leg in trip!.legs {
             if let foregroundColor = leg.line.foregroundColor {
                 if let backgroundColor = leg.line.backgroundColor {
                     var legLabel = UILabel(frame: CGRectMake(dx, dy, 30, 30))
@@ -54,5 +57,14 @@ class TripCell: UITableViewCell {
             }
         }
     }
+    
+    lazy var dateFormatter: NSDateFormatter = {
+        var _dateFormatter = NSDateFormatter()
+        _dateFormatter.dateFormat = "HH:mm"
+        
+        return _dateFormatter
+    }()
+    
+    
 
 }
