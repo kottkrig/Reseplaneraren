@@ -52,7 +52,6 @@
 		74592C211A0A84E7009F2EF8 /* TripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74592C201A0A84E7009F2EF8 /* TripCell.swift */; };
 		74592C221A0A84E7009F2EF8 /* TripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74592C201A0A84E7009F2EF8 /* TripCell.swift */; };
 		74592C241A0A8B35009F2EF8 /* TripResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74592C231A0A8B35009F2EF8 /* TripResultViewController.swift */; };
-		74592C251A0A8B35009F2EF8 /* TripResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74592C231A0A8B35009F2EF8 /* TripResultViewController.swift */; };
 		746DB6D719F96C39001976B1 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DB6CB19F96C39001976B1 /* Error.swift */; };
 		746DB6D819F96C39001976B1 /* Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DB6CC19F96C39001976B1 /* Functional.swift */; };
 		746DB6D919F96C39001976B1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 746DB6CD19F96C39001976B1 /* Info.plist */; };
@@ -64,6 +63,8 @@
 		746DB6DF19F96C39001976B1 /* JSValue.Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DB6D419F96C39001976B1 /* JSValue.Parsing.swift */; };
 		746DB6E019F96C39001976B1 /* JSValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DB6D519F96C39001976B1 /* JSValue.swift */; };
 		746DB6E119F96C39001976B1 /* ReplayableGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DB6D619F96C39001976B1 /* ReplayableGenerator.swift */; };
+		74772E321A0BF59F00152BAB /* LegCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74772E311A0BF59F00152BAB /* LegCell.swift */; };
+		74772E341A0BFA6F00152BAB /* TripDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74772E331A0BFA6F00152BAB /* TripDetailViewController.swift */; };
 		749382DE1A01512C00962670 /* TripSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749382DD1A01512C00962670 /* TripSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -175,6 +176,8 @@
 		746DB6D419F96C39001976B1 /* JSValue.Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSValue.Parsing.swift; sourceTree = "<group>"; };
 		746DB6D519F96C39001976B1 /* JSValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSValue.swift; sourceTree = "<group>"; };
 		746DB6D619F96C39001976B1 /* ReplayableGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplayableGenerator.swift; sourceTree = "<group>"; };
+		74772E311A0BF59F00152BAB /* LegCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegCell.swift; sourceTree = "<group>"; };
+		74772E331A0BFA6F00152BAB /* TripDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripDetailViewController.swift; sourceTree = "<group>"; };
 		749382DD1A01512C00962670 /* TripSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripSearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,6 +255,7 @@
 				043286E319411A0A00396A20 /* MasterViewController.swift */,
 				749382DD1A01512C00962670 /* TripSearchViewController.swift */,
 				74592C231A0A8B35009F2EF8 /* TripResultViewController.swift */,
+				74772E331A0BFA6F00152BAB /* TripDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -349,6 +353,7 @@
 			children = (
 				74592C1D1A0A84C9009F2EF8 /* SearchToResultSegue.swift */,
 				74592C201A0A84E7009F2EF8 /* TripCell.swift */,
+				74772E311A0BF59F00152BAB /* LegCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -525,6 +530,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74772E321A0BF59F00152BAB /* LegCell.swift in Sources */,
 				74592C211A0A84E7009F2EF8 /* TripCell.swift in Sources */,
 				74592C241A0A8B35009F2EF8 /* TripResultViewController.swift in Sources */,
 				746DB6DA19F96C39001976B1 /* JSValue.Accessors.swift in Sources */,
@@ -542,6 +548,7 @@
 				043286F01941CDC700396A20 /* APIKey.swift in Sources */,
 				043286E819411A0A00396A20 /* TripLocation.swift in Sources */,
 				746DB6DD19F96C39001976B1 /* JSValue.Indexers.swift in Sources */,
+				74772E341A0BFA6F00152BAB /* TripDetailViewController.swift in Sources */,
 				043286F71941E33200396A20 /* UIColor+Hex.swift in Sources */,
 				043286E919411A0A00396A20 /* VasttrafikAPIManager.swift in Sources */,
 				746DB6E019F96C39001976B1 /* JSValue.swift in Sources */,
@@ -581,7 +588,6 @@
 				74148E9C19F97D68000B2DD5 /* Functional.swift in Sources */,
 				74148E9F19F97D70000B2DD5 /* JSValue.ErrorHandling.swift in Sources */,
 				74148E9819F97CF2000B2DD5 /* TripLocation.swift in Sources */,
-				74592C251A0A8B35009F2EF8 /* TripResultViewController.swift in Sources */,
 				74148E9919F97CF2000B2DD5 /* TripQuery.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

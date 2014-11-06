@@ -68,18 +68,23 @@ class TripResultViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        performSegueWithIdentifier("ResultToDetailSegue", sender: self)
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let indexPath = self.tableView.indexPathForSelectedRow()
+        
+        let tripDetailViewController = segue.destinationViewController as TripDetailViewController
+        
+        if let row = indexPath?.row {
+            tripDetailViewController.trip = trips?[row]
+        }
     }
-    */
+    
 
 }

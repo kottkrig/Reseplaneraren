@@ -218,11 +218,85 @@
                     <connections>
                         <outlet property="mapView" destination="95i-6b-h5W" id="PHa-sa-ayt"/>
                         <outlet property="tableView" destination="B8a-PU-bNk" id="7Xk-1f-dKp"/>
+                        <segue destination="bN3-DG-tzx" kind="show" identifier="ResultToDetailSegue" id="NQa-q9-hnU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t0c-31-CbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="684" y="531"/>
+        </scene>
+        <!--All Trip Legs-->
+        <scene sceneID="qvy-Hn-nmm">
+            <objects>
+                <tableViewController id="bN3-DG-tzx" customClass="TripDetailViewController" customModule="Reseplaneraren" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" id="pB7-Gc-IID">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TripDetailLegCell" id="Ye7-Ye-Pu3" customClass="LegCell" customModule="Reseplaneraren" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="86" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ye7-Ye-Pu3" id="Mf8-Hk-4PO">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wieselgrensplatsen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wNC-8l-AMH">
+                                            <rect key="frame" x="43" y="5" width="200" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15:42" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQ6-bA-aF2">
+                                            <rect key="frame" x="-7" y="5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kungsportsplatsen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l1q-GZ-wJX">
+                                            <rect key="frame" x="43" y="34" width="200" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="16:30" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQH-ME-TiO">
+                                            <rect key="frame" x="-7" y="34" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVR-pe-NtR">
+                                            <rect key="frame" x="258" y="24" width="42" height="21"/>
+                                            <color key="backgroundColor" red="0.89019614459999996" green="0.16862745579999999" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="tintColor" red="0.89019614459999996" green="0.16862745579999999" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="gVR-pe-NtR" secondAttribute="trailing" constant="20" symbolic="YES" id="72l-bz-RWa"/>
+                                        <constraint firstItem="gVR-pe-NtR" firstAttribute="top" secondItem="Mf8-Hk-4PO" secondAttribute="top" id="CPB-EW-bvg"/>
+                                        <constraint firstAttribute="bottom" secondItem="gVR-pe-NtR" secondAttribute="bottom" id="XH2-Sh-ZCA"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="destinationLabel" destination="l1q-GZ-wJX" id="vl1-4w-Rsa"/>
+                                    <outlet property="destinationTimeLabel" destination="UQH-ME-TiO" id="1NL-2Q-HzT"/>
+                                    <outlet property="lineLabel" destination="gVR-pe-NtR" id="aD3-eJ-JV2"/>
+                                    <outlet property="originLabel" destination="wNC-8l-AMH" id="YM8-az-9FG"/>
+                                    <outlet property="originTimeLabel" destination="hQ6-bA-aF2" id="jvp-sb-s2v"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bN3-DG-tzx" id="bHL-uL-igP"/>
+                            <outlet property="delegate" destination="bN3-DG-tzx" id="O1k-hg-pmI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="All Trip Legs" id="qgn-wr-wxn"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eeV-DN-MEw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1484" y="532"/>
         </scene>
     </scenes>
 </document>
