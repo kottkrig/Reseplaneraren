@@ -65,6 +65,11 @@
 		746DB6E119F96C39001976B1 /* ReplayableGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746DB6D619F96C39001976B1 /* ReplayableGenerator.swift */; };
 		74772E321A0BF59F00152BAB /* LegCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74772E311A0BF59F00152BAB /* LegCell.swift */; };
 		74772E341A0BFA6F00152BAB /* TripDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74772E331A0BFA6F00152BAB /* TripDetailViewController.swift */; };
+		748360AD1A0D2CD900E1826C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 748360AC1A0D2CD900E1826C /* Realm.framework */; };
+		748360AF1A0D2D0000E1826C /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 748360AE1A0D2D0000E1826C /* libc++.dylib */; };
+		748360B11A0D2D2000E1826C /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748360B01A0D2D2000E1826C /* RLMSupport.swift */; };
+		748360B31A0D2E4500E1826C /* FavouriteDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748360B21A0D2E4500E1826C /* FavouriteDestination.swift */; };
+		748360B51A0D30D600E1826C /* FavouriteDestinationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748360B41A0D30D600E1826C /* FavouriteDestinationCollectionViewCell.swift */; };
 		749382DE1A01512C00962670 /* TripSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749382DD1A01512C00962670 /* TripSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -178,6 +183,11 @@
 		746DB6D619F96C39001976B1 /* ReplayableGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplayableGenerator.swift; sourceTree = "<group>"; };
 		74772E311A0BF59F00152BAB /* LegCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegCell.swift; sourceTree = "<group>"; };
 		74772E331A0BFA6F00152BAB /* TripDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripDetailViewController.swift; sourceTree = "<group>"; };
+		748360AC1A0D2CD900E1826C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		748360AE1A0D2D0000E1826C /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		748360B01A0D2D2000E1826C /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
+		748360B21A0D2E4500E1826C /* FavouriteDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteDestination.swift; sourceTree = "<group>"; };
+		748360B41A0D30D600E1826C /* FavouriteDestinationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteDestinationCollectionViewCell.swift; sourceTree = "<group>"; };
 		749382DD1A01512C00962670 /* TripSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripSearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,6 +196,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				748360AF1A0D2D0000E1826C /* libc++.dylib in Frameworks */,
+				748360AD1A0D2CD900E1826C /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +248,7 @@
 				043286DD19411A0A00396A20 /* TripLeg.swift */,
 				043286DE19411A0A00396A20 /* TripLocation.swift */,
 				04822E361941EE39008C83DA /* TripQuery.swift */,
+				748360B21A0D2E4500E1826C /* FavouriteDestination.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -354,6 +367,7 @@
 				74592C1D1A0A84C9009F2EF8 /* SearchToResultSegue.swift */,
 				74592C201A0A84E7009F2EF8 /* TripCell.swift */,
 				74772E311A0BF59F00152BAB /* LegCell.swift */,
+				748360B41A0D30D600E1826C /* FavouriteDestinationCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -380,6 +394,8 @@
 		747AC88619701439003CB740 /* ExternalFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				748360B01A0D2D2000E1826C /* RLMSupport.swift */,
+				748360AC1A0D2CD900E1826C /* Realm.framework */,
 				746DB6CA19F96C39001976B1 /* JSON */,
 			);
 			path = ExternalFrameworks;
@@ -388,6 +404,7 @@
 		C75EEB0A000B4158A43181D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				748360AE1A0D2D0000E1826C /* libc++.dylib */,
 				04FC437E196C5AB6009A5488 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
@@ -535,8 +552,10 @@
 				74592C241A0A8B35009F2EF8 /* TripResultViewController.swift in Sources */,
 				746DB6DA19F96C39001976B1 /* JSValue.Accessors.swift in Sources */,
 				746DB6DB19F96C39001976B1 /* JSValue.Encodings.swift in Sources */,
+				748360B51A0D30D600E1826C /* FavouriteDestinationCollectionViewCell.swift in Sources */,
 				043286E619411A0A00396A20 /* Trip.swift in Sources */,
 				043286F51941D91100396A20 /* DateUtils.swift in Sources */,
+				748360B11A0D2D2000E1826C /* RLMSupport.swift in Sources */,
 				043286E519411A0A00396A20 /* Line.swift in Sources */,
 				749382DE1A01512C00962670 /* TripSearchViewController.swift in Sources */,
 				746DB6DE19F96C39001976B1 /* JSValue.Literals.swift in Sources */,
@@ -551,6 +570,7 @@
 				74772E341A0BFA6F00152BAB /* TripDetailViewController.swift in Sources */,
 				043286F71941E33200396A20 /* UIColor+Hex.swift in Sources */,
 				043286E919411A0A00396A20 /* VasttrafikAPIManager.swift in Sources */,
+				748360B31A0D2E4500E1826C /* FavouriteDestination.swift in Sources */,
 				746DB6E019F96C39001976B1 /* JSValue.swift in Sources */,
 				043286EA19411A0A00396A20 /* DetailViewController.swift in Sources */,
 				746DB6D819F96C39001976B1 /* Functional.swift in Sources */,
@@ -736,6 +756,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Reseplaneraren/ExternalFrameworks",
+				);
 				INFOPLIST_FILE = Reseplaneraren/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -748,6 +772,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Reseplaneraren/ExternalFrameworks",
+				);
 				INFOPLIST_FILE = Reseplaneraren/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

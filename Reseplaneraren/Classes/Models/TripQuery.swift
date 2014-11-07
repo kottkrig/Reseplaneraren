@@ -27,7 +27,7 @@ class TripQuery {
     func prefetchTripsIfPossible() {
         if isPrefetchPossible {
             NSLog("Prefetch is possible")
-            trips = []
+            trips = nil
             fetchTripsWithSuccess({ trips in
                 //NSLog("%@", trips)
                 })

@@ -8,6 +8,7 @@
 
 import XCTest
 import Reseplaneraren
+import Realm
 
 class ReseplanerarenTests: XCTestCase {
     

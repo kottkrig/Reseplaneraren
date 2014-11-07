@@ -70,7 +70,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FavouriteCell" id="7C3-oL-din" customClass="FavouriteDestinationCollectionViewCell">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FavouriteCell" id="7C3-oL-din" customClass="FavouriteDestinationCollectionViewCell" customModule="Reseplaneraren" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="14" width="82" height="51"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -88,14 +88,19 @@
                                                 </view>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="pdU-n5-Ozt" secondAttribute="trailing" id="0TN-bJ-f51"/>
+                                                    <constraint firstItem="pdU-n5-Ozt" firstAttribute="leading" secondItem="7C3-oL-din" secondAttribute="leadingMargin" constant="-8" id="J2a-AS-xQ5"/>
                                                     <constraint firstItem="pdU-n5-Ozt" firstAttribute="leading" secondItem="7C3-oL-din" secondAttribute="leading" id="bQk-pd-VFP"/>
                                                     <constraint firstItem="pdU-n5-Ozt" firstAttribute="centerY" secondItem="7C3-oL-din" secondAttribute="centerY" id="f4U-xv-YJ0"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outlet property="nameLabel" destination="pdU-n5-Ozt" id="hjc-BX-Y4h"/>
+                                                    <outlet property="nameLabel" destination="pdU-n5-Ozt" id="ux3-E6-zTJ"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="vgH-o3-DpO" id="hci-TT-V0o"/>
+                                            <outlet property="delegate" destination="vgH-o3-DpO" id="2c5-cJ-Nc2"/>
+                                        </connections>
                                     </collectionView>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WhY-h0-8JC">
                                         <rect key="frame" x="8" y="238" width="584" height="29"/>
@@ -145,7 +150,7 @@
                     <navigationItem key="navigationItem" title="Sök resa" id="bhu-kg-usj"/>
                     <connections>
                         <outlet property="departureTimeSegmentedControl" destination="WhY-h0-8JC" id="zr3-aC-7tz"/>
-                        <outlet property="favouritesCollectionView" destination="Av2-rk-J3Q" id="BjB-4e-ao4"/>
+                        <outlet property="favouritesCollectionView" destination="Av2-rk-J3Q" id="QvY-Rt-9Le"/>
                         <outlet property="mapView" destination="R3S-w8-0Gd" id="dqe-to-Ldg"/>
                         <outlet property="searchDisplayController" destination="VbY-mZ-3HK" id="ldy-Hl-Pxq"/>
                         <outlet property="searchField" destination="Lwa-nv-lun" id="6xp-NP-22C"/>

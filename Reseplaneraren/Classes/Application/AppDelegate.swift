@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Realm
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -21,6 +22,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         
         let controller = navigationController.topViewController as TripSearchViewController
         controller.managedObjectContext = self.managedObjectContext*/
+        
+        /*let chapmansTorg = FavouriteDestination()
+        chapmansTorg.name = "Chapmans torg"
+        chapmansTorg.locationId = "9021014001980000"
+        
+        let brunnsparken = FavouriteDestination()
+        brunnsparken.name = "Brunnsparken"
+        brunnsparken.locationId = "9021014001760000"
+        
+        let realm = RLMRealm.defaultRealm()
+        
+        realm.beginWriteTransaction()
+        realm.deleteAllObjects()
+        realm.commitWriteTransaction()
+        
+        realm.beginWriteTransaction()
+        realm.addObject(brunnsparken)
+        realm.commitWriteTransaction()
+        
+        realm.beginWriteTransaction()
+        realm.addObject(chapmansTorg)
+        realm.commitWriteTransaction()*/
+        
+        
         return true
     }
     

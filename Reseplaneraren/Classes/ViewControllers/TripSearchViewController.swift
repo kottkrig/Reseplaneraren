@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import MapKit
 
-class TripSearchViewController: UIViewController, CLLocationManagerDelegate {
+class TripSearchViewController: UIViewController, CLLocationManagerDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     required init(coder aDecoder: NSCoder) {
         
@@ -29,6 +29,8 @@ class TripSearchViewController: UIViewController, CLLocationManagerDelegate {
     
     var tripQuery: TripQuery
     
+    let favourites = FavouriteDestination.allObjects()
+    
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var favouritesCollectionView: UICollectionView!
     @IBOutlet weak var departureTimeSegmentedControl: UISegmentedControl!
@@ -43,6 +45,9 @@ class TripSearchViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         
         tripQuery.setDestinationLocationId("9021014001980000")
+        
+        favouritesCollectionView.delegate = self
+        favouritesCollectionView.dataSource = self
         
         // Do any additional setup after loading the view.
     }
@@ -79,6 +84,40 @@ class TripSearchViewController: UIViewController, CLLocationManagerDelegate {
             })
         }
     }
+    
+    // MARK: - UICollectionViewDataSource
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return Int(favourites.count)
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FavouriteCell", forIndexPath: indexPath) as FavouriteDestinationCollectionViewCell
+        
+        let favourite = favourites[UInt(indexPath.row)] as FavouriteDestination
+        cell.favouriteDestination = favourite
+        cell.backgroundColor = UIColor.greenColor()
+        
+        return cell
+    }
+    
+    
+    // MARK: - UICollectionViewDelegate
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        let selectedFavourite = favourites[UInt(indexPath.row)] as FavouriteDestination
+        
+        tripQuery.setDestinationLocationId(selectedFavourite.locationId)
+        tripQuery.prefetchTripsIfPossible()
+    }
+    
+    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
+    
+    
     
 
     
