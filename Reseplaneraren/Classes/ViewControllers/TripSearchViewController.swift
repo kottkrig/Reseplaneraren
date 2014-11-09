@@ -50,7 +50,8 @@ class TripSearchViewController: UIViewController, CLLocationManagerDelegate, UIC
         favouritesCollectionView.delegate = self
         favouritesCollectionView.dataSource = self
         
-        // Do any additional setup after loading the view.
+        departureTimeSegmentedControl.selectedSegmentIndex = NSUserDefaults.standardUserDefaults().integerForKey("default_departure_time_segment_index")
+        departureTimeChanged(departureTimeSegmentedControl)
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
@@ -76,14 +77,19 @@ class TripSearchViewController: UIViewController, CLLocationManagerDelegate, UIC
         let segmentedControl = sender as UISegmentedControl
         var newDepartureTime: NSDate
         
+        NSUserDefaults.standardUserDefaults().setInteger(segmentedControl.selectedSegmentIndex, forKey: "default_departure_time_segment_index")
+        NSUserDefaults.standardUserDefaults().synchronize()
+        
         switch segmentedControl.selectedSegmentIndex {
         case 0:
             tripQuery.departureDelay = 0
             break
         case 1:
             tripQuery.departureDelay = 600
+            break
         case 2:
             tripQuery.departureDelay = 1800
+            break
         default:
             break
         }
