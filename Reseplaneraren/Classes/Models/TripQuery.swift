@@ -14,20 +14,13 @@ class TripQuery {
     var trips: [Trip]?
     var queryParameters = Dictionary<String, String>()
     
-    var isPrefetchPossible: Bool {
-    get {
-        return true
-    }
-    }
-    
     init() {
 
     }
     
     func prefetchTripsIfPossible() {
-        if isPrefetchPossible {
+        if prefetchIsPossible {
             NSLog("Prefetch is possible")
-            trips = nil
             fetchTripsWithSuccess({ trips in
                 //NSLog("%@", trips)
                 })
@@ -35,6 +28,8 @@ class TripQuery {
     }
     
     func fetchTripsWithSuccess(success: (trips: [Trip]) -> ()) {
+        
+        self.trips = nil
         
         VasttrafikAPIManager.sharedClient.cancelAllTripRequests()
         VasttrafikAPIManager.sharedClient.fetchTripsForQuery(self, success: {trips in
@@ -44,6 +39,18 @@ class TripQuery {
             }, failure: { error in
                 NSLog("Error")
             })
+    }
+    
+    var prefetchIsPossible:Bool {
+        return hasOrigin && hasDestination
+    }
+    
+    var hasOrigin: Bool {
+        return queryParameters["originCoordLat"] != nil || queryParameters["originId"] != nil
+    }
+    
+    var hasDestination: Bool {
+        return queryParameters["destCoordLat"] != nil || queryParameters["destId"] != nil
     }
     
     
@@ -56,18 +63,24 @@ class TripQuery {
         queryParameters["originCoordName"] = "Min Plats"
         
         removeQueryParameters("originId")
+        
+        prefetchTripsIfPossible()
     }
     
     func setOriginLocationId(locationId: String) {
         queryParameters["originId"] = locationId
         
         removeQueryParameters("originCoordLat", "originCordLong", "originCoordName")
+        
+        prefetchTripsIfPossible()
     }
     
     func setDestinationLocationId(locationId: String) {
         queryParameters["destId"] = locationId
         
         removeQueryParameters("destCoordLat", "destCordLong", "destCoordName")
+        
+        prefetchTripsIfPossible()
     }
     
     func removeQueryParameters(queryKeys: String...) {
