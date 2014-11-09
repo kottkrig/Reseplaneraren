@@ -150,8 +150,10 @@
                     <navigationItem key="navigationItem" title="Sök resa" id="bhu-kg-usj"/>
                     <connections>
                         <outlet property="departureTimeSegmentedControl" destination="WhY-h0-8JC" id="zr3-aC-7tz"/>
+                        <outlet property="destinationTextField" destination="ReX-9g-DO9" id="LIm-8n-oHV"/>
                         <outlet property="favouritesCollectionView" destination="Av2-rk-J3Q" id="QvY-Rt-9Le"/>
                         <outlet property="mapView" destination="R3S-w8-0Gd" id="dqe-to-Ldg"/>
+                        <outlet property="originTextField" destination="Lwa-nv-lun" id="J3i-f4-HIG"/>
                         <outlet property="searchDisplayController" destination="VbY-mZ-3HK" id="ldy-Hl-Pxq"/>
                         <outlet property="searchField" destination="Lwa-nv-lun" id="6xp-NP-22C"/>
                         <segue destination="0Rc-mz-f9e" kind="show" identifier="SearchToResultSegue" id="nts-vh-BTy"/>

@@ -35,6 +35,9 @@ class TripSearchViewController: UIViewController, CLLocationManagerDelegate, UIC
     @IBOutlet weak var favouritesCollectionView: UICollectionView!
     @IBOutlet weak var departureTimeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var mapView: MKMapView!
+    
+    @IBOutlet weak var originTextField: UITextField!
+    @IBOutlet weak var destinationTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +46,6 @@ class TripSearchViewController: UIViewController, CLLocationManagerDelegate, UIC
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
-        
-        tripQuery.setDestinationLocationId("9021014001980000")
         
         favouritesCollectionView.delegate = self
         favouritesCollectionView.dataSource = self
@@ -59,7 +60,7 @@ class TripSearchViewController: UIViewController, CLLocationManagerDelegate, UIC
             currentLocation = newLocation
             
             tripQuery.setOriginCoordinate(newLocation.coordinate)
-            tripQuery.prefetchTripsIfPossible()
+            originTextField.text = "Min plats"
             
             var adjustedRegion = mapView.regionThatFits(MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 3000, 3000))
             mapView.setRegion(adjustedRegion, animated: true)
@@ -80,7 +81,9 @@ class TripSearchViewController: UIViewController, CLLocationManagerDelegate, UIC
             self.performSegueWithIdentifier("SearchToResultSegue", sender: self)
         } else {
             self.tripQuery.fetchTripsWithSuccess({ (trips) -> () in
-                self.performSegueWithIdentifier("SearchToResultSegue", sender: self)
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.performSegueWithIdentifier("SearchToResultSegue", sender: self)
+                })
             })
         }
     }
@@ -96,7 +99,9 @@ class TripSearchViewController: UIViewController, CLLocationManagerDelegate, UIC
         
         let favourite = favourites[UInt(indexPath.row)] as FavouriteDestination
         cell.favouriteDestination = favourite
-        cell.backgroundColor = UIColor.greenColor()
+        cell.backgroundColor = UIColor.darkGrayColor()
+        cell.selectedBackgroundView = UIView(frame: CGRectMake(0, 0, cell.frame.size.width, cell.frame.size.height))
+        cell.selectedBackgroundView.backgroundColor = view.tintColor
         
         return cell
     }
@@ -108,8 +113,9 @@ class TripSearchViewController: UIViewController, CLLocationManagerDelegate, UIC
         
         let selectedFavourite = favourites[UInt(indexPath.row)] as FavouriteDestination
         
+        destinationTextField.text = selectedFavourite.name
+        
         tripQuery.setDestinationLocationId(selectedFavourite.locationId)
-        tripQuery.prefetchTripsIfPossible()
     }
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
@@ -127,6 +133,8 @@ class TripSearchViewController: UIViewController, CLLocationManagerDelegate, UIC
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        println("Preparing for segue, on main thread? \(NSThread.isMainThread())")
         
         let tripResultViewController = segue.destinationViewController as TripResultViewController
         tripResultViewController.trips = self.tripQuery.trips

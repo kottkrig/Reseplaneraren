@@ -19,8 +19,13 @@ class FavouriteDestinationCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    override func drawRect(rect: CGRect) {
+        super.drawRect(rect)
+    }
+    
     
     func configureView() {
+        
         println("FavouriteDestinationCell: " + favouriteDestination!.name)
         self.nameLabel.text = favouriteDestination?.name
     }
