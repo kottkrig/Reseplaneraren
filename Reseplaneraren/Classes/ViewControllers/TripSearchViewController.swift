@@ -72,8 +72,21 @@ class TripSearchViewController: UIViewController, CLLocationManagerDelegate, UIC
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func departureTimeChanged(AnyObject) {
+    @IBAction func departureTimeChanged(sender: AnyObject) {
+        let segmentedControl = sender as UISegmentedControl
+        var newDepartureTime: NSDate
         
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            tripQuery.departureDelay = 0
+            break
+        case 1:
+            tripQuery.departureDelay = 600
+        case 2:
+            tripQuery.departureDelay = 1800
+        default:
+            break
+        }
     }
     
     @IBAction func searchButtonPressed(AnyObject) {

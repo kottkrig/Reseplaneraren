@@ -11,11 +11,17 @@ import MapKit
 
 class TripQuery {
     
+    var departureDelay: NSTimeInterval {
+        didSet {
+            prefetchTripsIfPossible()
+        }
+    }
+    
     var trips: [Trip]?
     var queryParameters = Dictionary<String, String>()
     
     init() {
-
+        departureDelay = 0
     }
     
     func prefetchTripsIfPossible() {
@@ -30,6 +36,11 @@ class TripQuery {
     func fetchTripsWithSuccess(success: (trips: [Trip]) -> ()) {
         
         self.trips = nil
+        
+        let _departureTime = self.departureTime
+        
+        queryParameters["time"] = timeFormatter.stringFromDate(_departureTime)
+        queryParameters["date"] = dateFormatter.stringFromDate(_departureTime)
         
         VasttrafikAPIManager.sharedClient.cancelAllTripRequests()
         VasttrafikAPIManager.sharedClient.fetchTripsForQuery(self, success: {trips in
@@ -51,6 +62,22 @@ class TripQuery {
     
     var hasDestination: Bool {
         return queryParameters["destCoordLat"] != nil || queryParameters["destId"] != nil
+    }
+    
+    var departureTime: NSDate {
+        return NSDate(timeIntervalSinceNow: departureDelay)
+    }
+    
+    var timeFormatter: NSDateFormatter {
+        let _timeFormatter = NSDateFormatter()
+        _timeFormatter.dateFormat = "HH:mm"
+        return _timeFormatter
+    }
+    
+    var dateFormatter: NSDateFormatter {
+        let _dateFormatter = NSDateFormatter()
+        _dateFormatter.dateFormat = "yyyy-MM-dd"
+        return _dateFormatter
     }
     
     
